@@ -1,0 +1,13 @@
+{
+    "editor.formatOnSave": true,
+    "python.linting.enabled": true,
+    "python.linting.lintOnSave": true,
+    "python.testing.unittestEnabled": false,
+    "python.testing.pytestEnabled": true,
+    "jupyter.notebookFileRoot": "${workspaceFolder}",
+    "python.testing.cwd": "${cwd}",
+    "python.defaultInterpreterPath": ".venv/bin/python",
+    "python.formatting.provider": "black",
+    "restructuredtext.confPath": "${workspaceFolder}/docs"
+  }
+  
