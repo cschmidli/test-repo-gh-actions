@@ -1,0 +1,24 @@
+name: PyTests
+on: workflow_dispatch
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v2
+      
+      - name: Set up python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.8
+
+      - name: Install Poetry
+        uses: snok/install-poetry@v1
+
+      - name: Install library
+        run: poetry install
+
+      - name: Run tests
+        run: |
+          poetry run python -m pytest
