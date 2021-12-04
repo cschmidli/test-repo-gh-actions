@@ -21,7 +21,7 @@ jobs:
           python-version: 3.8
 
       - name: Install Poetry
-        uses: dschep/install-poetry-action@v1.2
+        uses: snok/install-poetry@v1
 
       - name: Cache Poetry virtualenv
         uses: actions/cache@v1
@@ -40,9 +40,6 @@ jobs:
       - name: Install Dependencies
         run: poetry install
         if: steps.cache.outputs.cache-hit != 'true'
-        
+
       - name: Test with pytest
-        env:
-          DJANGO_SETTINGS_MODULE: project.settings
-          SECRETS_FILE: .confidential/ci.json
-        run: poetry run pytest --cov . -n 2
+        run: poetry run pytest
